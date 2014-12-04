@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
+    @albums = @albums.search(params[:search]) if params[:search].present?
   end
   def new
     @album = Album.new

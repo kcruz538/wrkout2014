@@ -51,3 +51,4 @@ gem 'mail_form' # send email from forms, like a contact form
 gem 'pg_search'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'thumbs_up'
+gem 'pg_search'
