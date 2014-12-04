@@ -8,9 +8,23 @@
       <div class="caption">
         <h3> <%= highlight(album.name, params[:search]) %></h3>
         <p><%= highlight(album.description, params[:search]) %></p>
-        <!-- <p><a href="#" class="btn btn-primary" role+"button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+        <% album.tags.each do |tag| %>
+          <%= link_to tag.name, album_tag_path(tag_name: tag.name) %>
+        <% end %>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
       </div>
     </div>
   </div>
 <% end %>
+</div>
+
+<div class="row">
+  <h4>Tags</h4>
+  <% @tags.each do |tag| %>
+    <%= link_to  album_tag_path(tag_name: tag.name), class: "" do %>
+      <span class="label label-info">
+        <%= tag.name %>
+      </span>
+      <% end %>&nbsp;
+  <% end %>
 </div>

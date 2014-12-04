@@ -1,4 +1,5 @@
 class Album < ActiveRecord::Base
+  acts_as_taggable
   include PgSearch
   pg_search_scope :search,
                   against: [:name, :description],
