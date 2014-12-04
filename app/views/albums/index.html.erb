@@ -1,17 +1,21 @@
 <div class="row">
 
 <% @albums.each do |album| %>
-
   <div class="col-sm-6 col-md-4">
     <div class="thumnail">
-      <%= image_tag album.photo.url(:large), class: "img-responsive" %>
+      <%= link_to user_path(id: album.user_id) do %>
+        <%= image_tag album.photo.url(:large), class: "img-responsive" %>
+      <%end%>
+      <%= link_to user_path(id: album.user_id) do %>
+        <%= album.user.email %>
+      <%end%>
       <div class="caption">
         <h3> <%= highlight(album.name, params[:search]) %></h3>
         <p><%= highlight(album.description, params[:search]) %></p>
         <% album.tags.each do |tag| %>
           <%= link_to tag.name, album_tag_path(tag_name: tag.name) %>
         <% end %>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
       </div>
     </div>
   </div>

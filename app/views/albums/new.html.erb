@@ -2,8 +2,15 @@
   <h1>Create new Photo</h1>
 </div>
 
-<%= simple_form_for @album do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo %>
-  <%= f.submit class: "btn btn-lg btn-primary" %>
-<% end %>
+
+<div class="form">
+  <div>
+    <%= simple_form_for @album do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo %>
+      <%= f.input :post %>
+      <%= f.association :user %>
+      <%= f.submit class: "btn btn-lg btn-primary" %>
+    <% end %>
+  </div>
+</div>

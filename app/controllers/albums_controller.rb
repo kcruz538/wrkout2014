@@ -15,10 +15,10 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new
+    @album = current_user.albums.new
   end
   def create
-    @album = Album.new(params.require(:album).permit(:name, :photo, :tag_list))
+    @album = Album.new(params.require(:album).permit(:name, :photo, :post, :user_id, :tag_list))
     if @album.save
       redirect_to root_path
     else
