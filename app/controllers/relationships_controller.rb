@@ -7,7 +7,7 @@ class RelationshipsController < ApplicationController
   def create
     @relationship = Relationship.new(user_id: current_user.id, friend_id: params[:friend_id])
     @relationship.save
-    redirect_to user_path(@relationship.friend_id), notice: "Successfully Follow"
+    redirect_to user_path (@relationship.friend_id), notice: "Successfully Follow"
   end
 
   def destroy
@@ -15,4 +15,5 @@ class RelationshipsController < ApplicationController
     @relationship.delete
     redirect_to root_path, notice: "Successfully Unfollow"
   end
+
 end
