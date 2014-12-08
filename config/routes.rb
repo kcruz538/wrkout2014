@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Payola::Engine => '/payola', as: :payola
   # get 'activities/index'
   post "charges" => 'charges#create', as: :charges
 
