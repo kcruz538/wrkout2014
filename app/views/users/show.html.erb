@@ -13,5 +13,20 @@
   <%= button_to "Follow", relationships_path(friend_id: @user.id), class: "btn btn-danger" %><br>
 <%else%>
   <%= button_to "Unfollow", relationship_path(user_id: current_user.id, friend_id: @user.id), method: :delete, class: "btn btn-danger" %>
+
+<%= form_tag charges_path, method: :post do %>
+<script
+  src="https://checkout.stripe.com/checkout.js"
+  class="stripe-button"
+  data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
+  data-image="<%= vote_path 'Like' %>"
+  data-name="Connect with me"
+  data-description="Advice($1.00)"
+  data-amount="2000">
+</script>
+
+<% end %>
+
+
 <%end%>
 <%end%>

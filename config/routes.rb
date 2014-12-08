@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   # get 'activities/index'
+  post "charges" => 'charges#create', as: :charges
 
   root 'albums#index'
 
   get 'albums/new', as: :new_album
   get "/albums/tag/:tag_name" => "albums#tagged", as: :album_tag
   post '/albums' => 'albums#create', as: :albums
-  post 'vote' => 'albums#vote', as: :vote 
+  post 'vote' => 'albums#vote', as: :vote
   devise_for :users
 
   get 'users/:id' => 'users#show', as: :user

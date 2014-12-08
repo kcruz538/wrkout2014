@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   # include PublicActivity::Model
   # tracked
+  before_action :authenticate_user!, only: [:vote]
 
   before_action do
 
@@ -10,7 +11,7 @@ class AlbumsController < ApplicationController
 
   def index
 
-    @albums = Album.all
+    @albums = Album.all.order("likes DESC")
 
     @albums = @albums.search(params[:search]) if params[:search].present?
 
@@ -63,6 +64,6 @@ class AlbumsController < ApplicationController
   def params_album
 
     params.require(:album).permit(:name, :photo, :post, :user_id, :tag_list, :likes)
-    
+
   end
 end
