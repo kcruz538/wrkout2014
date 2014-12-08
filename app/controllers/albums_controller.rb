@@ -32,7 +32,7 @@ class AlbumsController < ApplicationController
 
   def create
 
-    @album = Album.new(params.require(:album).permit(:name, :photo, :post, :user_id, :tag_list))
+    @album = Album.new(params_album)
 
     if @album.save
 
@@ -46,4 +46,23 @@ class AlbumsController < ApplicationController
 
   end
 
+  def vote
+
+    @album = Album.find(params[:id])
+
+    @album.likes += 1
+
+    @album.save
+
+    redirect_to user_path(@album.user_id)
+
+  end
+
+  private
+
+  def params_album
+
+    params.require(:album).permit(:name, :photo, :post, :user_id, :tag_list, :likes)
+    
+  end
 end

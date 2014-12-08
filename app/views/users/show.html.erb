@@ -4,7 +4,8 @@
   <%= image_tag album.photo.url(:thumb) %>
   <%= album.user.email %>
   <strong><%= album.post %></strong>
-
+  <%= link_to "Like", vote_path(id: album.id), method: :post, class: "btn btn-primary" %>
+  <p>Like: <%= album.likes %></p>
 <%end%>
 
 <% if !current_user.nil? %>

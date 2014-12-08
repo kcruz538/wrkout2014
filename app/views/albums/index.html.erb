@@ -2,6 +2,8 @@
 
 <% @albums.each do |album| %>
 
+  <% if album.user_id != current_user.id %>
+
   <div class="col-sm-6 col-md-4">
 
     <div class="thumnail">
@@ -36,6 +38,7 @@
 
   </div>
 
+    <%end%>
 <% end %>
 
 </div>
@@ -57,5 +60,5 @@
       <% end %>&nbsp;
 
   <% end %>
-  
+
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206010724) do
+ActiveRecord::Schema.define(version: 20141207232257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141206010724) do
     t.text     "description", default: ""
     t.text     "post"
     t.integer  "user_id"
+    t.integer  "likes",       default: 0
   end
 
   create_table "relationships", force: true do |t|

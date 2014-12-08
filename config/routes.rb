@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'albums/new', as: :new_album
   get "/albums/tag/:tag_name" => "albums#tagged", as: :album_tag
   post '/albums' => 'albums#create', as: :albums
-
+  post 'vote' => 'albums#vote', as: :vote 
   devise_for :users
 
   get 'users/:id' => 'users#show', as: :user
