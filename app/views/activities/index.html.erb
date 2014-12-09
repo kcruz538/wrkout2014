@@ -2,3 +2,5 @@
 <% @activities.each do |activity|
   <%= activity.inspect %>
 <% end %> -->
+<%= render 'payola/transactions/checkout',
+      sellable: SomeModel.first %>

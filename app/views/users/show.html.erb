@@ -1,7 +1,7 @@
 
 <% @albums.each do |album| %>
 
-  <%= image_tag album.photo.url(:thumb) %>
+  <%= image_tag album.photo.url(:large) %>
   <%= album.user.email %>
   <strong><%= album.post %></strong>
   <%= link_to "Like", vote_path(id: album.id), method: :post, class: "btn btn-primary" %>
