@@ -59,7 +59,14 @@ class AlbumsController < ApplicationController
 
   end
 
-  private
+  def public
+    @album = Album.all
+  end
+
+
+
+  def private
+  end
 
   def params_album
 

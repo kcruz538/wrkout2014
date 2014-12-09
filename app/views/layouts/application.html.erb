@@ -39,8 +39,7 @@
 
     <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
 
-
-  <a href="/"> <img src="/assets/wrkout.jpg"> </a>
+    <span><strong><%= link_to "wrkout", root_path %></strong></span>
 
     <% end %>
 
@@ -71,6 +70,7 @@
   </div>
 
 </div>
+<img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/548677-614a2927735c3a4ac9e77f45b2a54e37-medium_jpg.jpg?buster=1417719928" alt="Smiley face" height="100" width="100">
 <%= yield %>
 
 </body>
