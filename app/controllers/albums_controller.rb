@@ -32,7 +32,7 @@ class AlbumsController < ApplicationController
   end
 
   def create
-
+    @album = Album.all
     @album = Album.new(params_album)
 
     if @album.save
@@ -55,7 +55,7 @@ class AlbumsController < ApplicationController
 
     @album.save
 
-    redirect_to user_path(@album.user_id)
+    redirect_to root_path
 
   end
 

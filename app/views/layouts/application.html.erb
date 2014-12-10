@@ -6,73 +6,47 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
   <p class="notice"><%= notice %></p>
-
   <p class="alert"><%= alert %></p>
-
 <p class="navbar-text pull-right">
-
 <% if user_signed_in? %>
-
-  Hello, <strong><%= current_user.email %></strong>
-
-  <%= link_to "Upload", new_album_path %>
-
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+  Hello,<%= current_user.email %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
 
 <% else %>
-
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-
 <% end %>
+</p>
 
 <div class="row">
-
-  <div class="col-xs-8">
-
+  <div class="col-xs-14">
     <%= form_tag root_path, method: 'get' do %>
-
     <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
-
     <span><strong><%= link_to "wrkout", root_path %></strong></span>
-
     <% end %>
-
   </div>
 
   <div class="container">
-
     <div class="row">
-
       <div class="col-xs-1 col-xs-push-10">
-
         <%= link_to new_album_path do %>
-
         <span class="fa-stack fa-lg">
-
           <i class="fa fa-square-o fa-stack-2x"></i>
-
           <i class="fa fa-plus fa-stack-1x"></i>
-
         </span>
-
         <% end %>
-
       </div>
-
     </div>
-
   </div>
-
 </div>
-<img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/548677-614a2927735c3a4ac9e77f45b2a54e37-medium_jpg.jpg?buster=1417719928" alt="Smiley face" height="100" width="100">
+
+<!-- <img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/548677-614a2927735c3a4ac9e77f45b2a54e37-medium_jpg.jpg?buster=1417719928" alt="Smiley face" height="100" width="100"> -->
+
 <%= yield %>
 
 </body>
-
 </html>

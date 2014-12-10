@@ -1,0 +1,12 @@
+<% @albums.each do |album| %>
+    <div class="thumbnail">
+      <%= link_to user_path(id: album.user_id) do %>
+        <%= image_tag album.photo.url(:large), class: "img-responsive", "data-toggle"=>"modal", "data-targer"=>"#modal-#{album.id}" %>
+      <%end%>
+      <%= link_to user_path(id: album.user_id) do %>
+        <%= album.user.email %>
+      <%end%>
+        <h3> <%= highlight(album.name, params[:search]) %></h3>
+        <p><%= highlight(album.description, params[:search]) %></p>
+    </div>
+<% end %>
