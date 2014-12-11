@@ -147,6 +147,16 @@ body {
 	position: relative;
 }
 
+
+
+input,
+li,
+h3,
+p{
+  color: #000;
+
+}
+
 .noscroll {
 	overflow: hidden;
 }
@@ -203,152 +213,11 @@ body {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-//
-// .placeholder > div {
-// 	display: block;
-// 	position: absolute;
-// 	width: 100%;
-// 	height: 100%;
-// 	-webkit-backface-visibility: hidden;
-// 	backface-visibility: hidden;
-// }
-//
-// .placeholder .front img {
-// 	width: 100%;
-// 	height: 100%;
-// }
-//
-// .placeholder .back {
-// 	background: white;
-// 	-webkit-transform: rotateY(180deg);
-// 	transform: rotateY(180deg);
-// }
-//
-// .view-full .placeholder {
-// 	-webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
-// 	transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
-// }
-//
-// .vertical .view-full .placeholder {
-// 	-webkit-transform: translateZ(1500px) rotateX(-179.9deg);
-// 	transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
-// }
-//
-// .horizontal .view-full .placeholder {
-// 	-webkit-transform: translateZ(1500px) rotateY(-179.9deg);
-// 	transform: translateZ(1500px) rotateY(-179.9deg);
-// }
-//
-// .grid figure img {
-// 	display: block;
-// 	width: 100%;
-// }
-//
-// .content,
-// .loading {
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	pointer-events: none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
-// }
-//
-// .content {
-// 	overflow-y: scroll;
-// 	height: 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
-// 	background: #fff;
-// 	visibility: hidden;
-// 	z-index: 400;
-// 	-webkit-overflow-scrolling: touch;
-// }
-//
-// .loading {
-// 	opacity: 0;
-// 	z-index: 1;
-// 	background: transparent url(../img/preloader.gif) no-repeat center center;
-// 	-webkit-transform: scale(0.5);
-// 	transform: scale(0.5);
-// 	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-// 	transition: opacity 0.5s, transform 0.5s;
-// }
-//
-// .loading.show {
-// 	opacity: 1;
-// 	-webkit-transform: scale(1);
-// 	transform: scale(1);
-// }
-//
-// .content.show {
-// 	height: auto;
-// 	pointer-events: auto;
-// 	visibility: visible;
-// }
-//
-// .content > div {
-// 	z-index: 10;
-// 	position: absolute;
-// 	top: 0;
-// 	width: 100%;
-// 	overflow: hidden;
-// 	height: 0;
-// 	opacity: 0;
-// 	background: #fff;
-// }
-//
-// .content > div.show {
-// 	height: auto;
-// 	opacity: 1;
-// 	-webkit-transition: opacity 0.6s;
-// 	transition: opacity 0.6s;
-// }
-//
-// .icon:before {
-// 	font-family: 'fontawesome';
-// 	speak: none;
-// 	font-style: normal;
-// 	font-weight: normal;
-// 	font-variant: normal;
-// 	text-transform: none;
-// 	line-height: 1;
-// 	-webkit-font-smoothing: antialiased;
-// 	-moz-osx-font-smoothing: grayscale;
-// }
-//
-// .close-content {
-// 	position: fixed;
-// 	z-index: 1000;
-// 	top: 0;
-// 	right: 10px;
-// 	font-size: 1.6em;
-// 	color: #aaa;
-// 	cursor: pointer;
-// 	pointer-events: none;
-// 	padding: 1em;
-// 	opacity: 0;
-// 	-webkit-transition: opacity 0.3s;
-// 	transition: opacity 0.3s;
-// }
-//
-// .close-content:hover {
-// 	color: #999;
-// }
-//
-// .content > div.show ~ .close-content {
-// 	opacity: 1;
-// 	pointer-events: auto;
-// }
-//
-// .close-content:before {
-// 	content: "\e602";
-// }
-//
-// @media screen and (max-width: 1000px) {
-//
-// 	.grid figure,
-// 	.grid .placeholder {
-// 		width: 240px;
-// 		height: 212px;
-// 	}
-//
-// }
+
+.thumbnail{
+
+  border: 1px solid #FFF;
+}
+
+body { margin-top:30px; }
+#login-nav input { margin-bottom: 15px; }
