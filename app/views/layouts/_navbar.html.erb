@@ -1,120 +1,48 @@
+<center> <a href="/"> <%= image_tag "logo-01.png", class: "logo" %> </a> </center>
 
 
+  <div class="row">
+    <p class="navbar-text pull-left">
+    </p>
 
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Hello,<%= current_user.email %>
-  <!-- <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link" %> -->
-  <%= link_to "Upload", new_album_path %>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
+    <p class="navbar-text pull-right">
+      <br />
+        <% if user_signed_in? %>
+        Hello,<%= current_user.email %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger' %>
+          <% else %>
+          </h3>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link',class: "btn btn-primary pull-right"  %>
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link', class: "btn btn-primary pull-right"    %>
+        <%end%>
+    </p>
+
 
 <div class="row">
-  <div class="col-xs-14">
-    <%= form_tag root_path, method: 'get' do %>
-    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
-    <span><strong><%= link_to "wrkout", root_path %></strong></span>
-    <% end %>
-  </div>
+  <div class="col-xs-8">
+<%= link_to "Upload", new_album_path, class: "btn btn-success" %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-1 col-xs-push-10">
-        <%= link_to new_album_path do %>
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-plus fa-stack-1x"></i>
-        </span>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+    <p class="navbar-text">
 
-
-
-<% if false %>
-
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand"><span><strong><%= link_to "wrkout", root_path %></strong></span>
-</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-
-  <% if false %>
-      <form class="navbar-form navbar-left" role="search">
-
+      <div class="col-xs-9 srch">
         <%= form_tag root_path, method: 'get' do %>
         <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
-        <%end%>
-      </form>
-<%end%>
+        <% end %>
+      </div>
+    </p>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
-
-          <ul class="dropdown-menu" role="menu">
-
-            <li><% if user_signed_in? %>
-                Hello,<%= current_user.email %></li>
-
-            <li>
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-            </li>
-
-            <li>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-
-            </li>
+  </div>
+</div>
+    <br /><br /><br /><br /><br />
 
 
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
+<!-- Disabled "Success" alert so it wouldnt show up every time you log in -->
+    <% if false %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
 
-<%end%>
-
-<%end%>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  </div>

@@ -24,17 +24,13 @@
         </div>
       </div>
     </div>
-<%= link_to user_path(id: album.user_id) do %>
-  <%= album.user.email %>
-<%end%>
 
-  <!-- <%= image_tag album.photo.url(:large) %>
-  <%= album.user.email %>
-  <strong><%= album.post %></strong>
-  <%= link_to "Like", vote_path(id: album.id), method: :post, class: "btn btn-primary" %>
-  <p>Like: <%= album.likes %></p> -->
 
 <%end%>
+
+  <div class="btn btn-default" >
+    <%= @user.email%>
+  </div>
 
 <% if !current_user.nil? %>
 <% if !current_user.friends.include? @user %>

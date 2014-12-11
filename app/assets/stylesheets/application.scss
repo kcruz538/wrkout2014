@@ -4,7 +4,7 @@
 
 
 body {
-  background: #e69720;
+  background: #fff;
   color: #fff;
   font-size: 150%;
   line-height: 1.25;
@@ -148,10 +148,11 @@ body {
 }
 
 
-
+label,
 input,
 li,
 h3,
+h4,
 p{
   color: #000;
 
@@ -219,5 +220,21 @@ p{
   border: 1px solid #FFF;
 }
 
-body { margin-top:30px; }
+body {
+  padding: 25px;
+  margin-top:30px;
+}
+
 #login-nav input { margin-bottom: 15px; }
+
+.srch{
+
+  width: 30%;
+}
+
+
+.logo{
+
+  width: 350;
+  height: 100px;
+}

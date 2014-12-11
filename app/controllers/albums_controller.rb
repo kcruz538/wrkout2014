@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   # include PublicActivity::Model
   # tracked
-  before_action :authenticate_user!, only: [:vote]
+  before_action :authenticate_user!, only: [:vote, :new, :create]
 
   before_action do
 
