@@ -1,3 +1,41 @@
-// Place all the styles related to the activities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+
+.alert-success {
+  color: #fff;
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.alert-success hr {
+  border-top-color: #2ecc71;
+}
+.alert-success .alert-link {
+  color: #fff;
+}
+
+
+.alert-danger {
+  color: #fff;
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+
+.alert-info {
+  color: #fff;
+  background-color: #3498db;
+  border-color: #3498db;
+}
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.alert-info .alert-link {
+  color: #245269;
+}

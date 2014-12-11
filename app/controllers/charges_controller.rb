@@ -20,12 +20,12 @@ class ChargesController < ApplicationController
 
     # create a stripe charge
     Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
-    @charge = Stripe::Charge.create(:amount => 2000,
+    @charge = Stripe::Charge.create(:amount => 1000,
                           :currency => "usd",
                           :card => stripe_token, # obtained with Stripe.js
                           :description => "Charge for #{email}")
 
-    our_charge = Charge.create amount_in_cents: 2000,
+    our_charge = Charge.create amount_in_cents: 1000,
                   email: email,
                   description: "Charge for #{email}",
                   stripe_charge_id: @charge.id

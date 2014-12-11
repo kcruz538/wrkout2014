@@ -2,23 +2,353 @@
 @import "bootstrap";
 
 
-nav {
-  margin: 10px 0;
-  padding-left:5em;
+
+body {
+  background: #e69720;
+  color: #fff;
+  font-size: 150%;
+  line-height: 1.25;
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+body.demo-2 {
+  background: #3498db;
+}
+
+.container {
+  overflow: hidden;
+}
+
+a {
+  color: rgba(0,0,0,0.4);
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover, a:focus {
+  color: #fff;
+}
+
+.codrops-header {
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+}
+
+.codrops-header h1 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 2.6em;
+}
+
+.codrops-header h1 span {
+  display: block;
+  padding: 0.3em 0 2em;
+  font-size: 0.45em;
+}
+
+.codrops-demos a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+.codrops-demos a.current-demo {
+  color: #fff;
+}
+
+/* To Navigation Style */
+.codrops-top {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.69em;
+  line-height: 2.2;
+}
+
+.codrops-top a {
+  display: inline-block;
+  padding: 0 1em;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.codrops-top span.right {
+  float: right;
+}
+
+.codrops-top span.right a {
+  display: block;
+  float: left;
+}
+
+.codrops-icon:before {
+  margin: 0 4px;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'codropsicons';
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+  content: "\e001";
+}
+
+.codrops-icon-prev:before {
+  content: "\e004";
+}
+
+section {
+  padding: 0em 3% 4em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.related > a {
+  border: 3px solid rgba(0,0,0,0.4);;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 25px;
+  -webkit-transition: color 0.3s, border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.related a:hover {
+  border-color: #fff;
+}
+
+.related a img {
+  max-width: 100%;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.related a:hover img,
+.related a:active img {
+  opacity: 1;
+}
+
+.related a h3 {
+  margin: 0;
+  padding: 0.5em 0 0.3em;
+  max-width: 300px;
+  text-align: left;
+  font-size: 0.75em;
 }
 
 
-form {
-
-  width: 50%;
-  align-content: center;
-  padding-left:2em;
-
+body {
+	position: relative;
 }
 
-page-header {
-
-  padding-left:2em;
-
-
+.noscroll {
+	overflow: hidden;
 }
+
+.grid-wrap {
+	margin: 10px auto 0;
+	max-width: 1090px;
+	width: 100%;
+	padding: 0;
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.grid {
+	position: relative;
+	-webkit-transition: all 0.5s cubic-bezier(0,0,0.25,1);
+	transition: all 0.5s cubic-bezier(0,0,0.25,1);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.view-full .grid {
+	-webkit-transform: translateZ(-1500px);
+	transform: translateZ(-1500px);
+}
+
+.grid figure,
+.grid .placeholder {
+	width: 340px;
+	height: 300px;
+}
+
+.grid figure {
+	margin: 10px;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.grid figure.active {
+	opacity: 0;
+}
+
+.grid .placeholder {
+	pointer-events: none;
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+//
+// .placeholder > div {
+// 	display: block;
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100%;
+// 	-webkit-backface-visibility: hidden;
+// 	backface-visibility: hidden;
+// }
+//
+// .placeholder .front img {
+// 	width: 100%;
+// 	height: 100%;
+// }
+//
+// .placeholder .back {
+// 	background: white;
+// 	-webkit-transform: rotateY(180deg);
+// 	transform: rotateY(180deg);
+// }
+//
+// .view-full .placeholder {
+// 	-webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+// 	transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+// }
+//
+// .vertical .view-full .placeholder {
+// 	-webkit-transform: translateZ(1500px) rotateX(-179.9deg);
+// 	transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
+// }
+//
+// .horizontal .view-full .placeholder {
+// 	-webkit-transform: translateZ(1500px) rotateY(-179.9deg);
+// 	transform: translateZ(1500px) rotateY(-179.9deg);
+// }
+//
+// .grid figure img {
+// 	display: block;
+// 	width: 100%;
+// }
+//
+// .content,
+// .loading {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	pointer-events: none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
+// }
+//
+// .content {
+// 	overflow-y: scroll;
+// 	height: 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
+// 	background: #fff;
+// 	visibility: hidden;
+// 	z-index: 400;
+// 	-webkit-overflow-scrolling: touch;
+// }
+//
+// .loading {
+// 	opacity: 0;
+// 	z-index: 1;
+// 	background: transparent url(../img/preloader.gif) no-repeat center center;
+// 	-webkit-transform: scale(0.5);
+// 	transform: scale(0.5);
+// 	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+// 	transition: opacity 0.5s, transform 0.5s;
+// }
+//
+// .loading.show {
+// 	opacity: 1;
+// 	-webkit-transform: scale(1);
+// 	transform: scale(1);
+// }
+//
+// .content.show {
+// 	height: auto;
+// 	pointer-events: auto;
+// 	visibility: visible;
+// }
+//
+// .content > div {
+// 	z-index: 10;
+// 	position: absolute;
+// 	top: 0;
+// 	width: 100%;
+// 	overflow: hidden;
+// 	height: 0;
+// 	opacity: 0;
+// 	background: #fff;
+// }
+//
+// .content > div.show {
+// 	height: auto;
+// 	opacity: 1;
+// 	-webkit-transition: opacity 0.6s;
+// 	transition: opacity 0.6s;
+// }
+//
+// .icon:before {
+// 	font-family: 'fontawesome';
+// 	speak: none;
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	font-variant: normal;
+// 	text-transform: none;
+// 	line-height: 1;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
+//
+// .close-content {
+// 	position: fixed;
+// 	z-index: 1000;
+// 	top: 0;
+// 	right: 10px;
+// 	font-size: 1.6em;
+// 	color: #aaa;
+// 	cursor: pointer;
+// 	pointer-events: none;
+// 	padding: 1em;
+// 	opacity: 0;
+// 	-webkit-transition: opacity 0.3s;
+// 	transition: opacity 0.3s;
+// }
+//
+// .close-content:hover {
+// 	color: #999;
+// }
+//
+// .content > div.show ~ .close-content {
+// 	opacity: 1;
+// 	pointer-events: auto;
+// }
+//
+// .close-content:before {
+// 	content: "\e602";
+// }
+//
+// @media screen and (max-width: 1000px) {
+//
+// 	.grid figure,
+// 	.grid .placeholder {
+// 		width: 240px;
+// 		height: 212px;
+// 	}
+//
+// }

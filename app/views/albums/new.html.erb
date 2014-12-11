@@ -1,16 +1,34 @@
-<div class="page-header">
-  <h1>Upload Photo</h1>
-</div>
-
-
-<div class="form">
-  <div>
-    <%= simple_form_for @album do |f| %>
-      <%= f.input :name %>
-      <%= f.input :photo %>
-      <%= f.input :post %>
-      <%= f.association :user %>
-      <%= f.submit class: "btn btn-lg btn-primary" %>
-    <% end %>
+<br />
+<br />
+<br />
+<div class="container cntr">
+  <div class="row vertical-offset-100">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Upload Photo</h3>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for @album do |f| %>
+          <form accept-charset="UTF-8" role="form">
+            <fieldset>
+              <div class="form-group">
+                <%= f.input :name %>
+              </div>
+              <div class="form-group">
+                <%= f.input :post %>
+              </div>
+              <div class="form-group">
+                <%= f.input :photo %>
+              </div>
+              <%= f.association :user, :as => :hidden %>
+              <%= f.submit class: "btn btn-lg btn-primary"%>
+            </fieldset>
+          </form>
+        <% end %>
+          <br />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
