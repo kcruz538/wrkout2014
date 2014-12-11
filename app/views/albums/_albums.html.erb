@@ -1,4 +1,4 @@
-<% @albums.each do |album| %>
+<center><% @albums.each do |album| %>
 <div class="thumbnail">
                 <!-- Button trigger modal -->
                   <%= link_to "#", data: {toggle: "modal", target: "#photo-modal#{album.id}"} do %>
@@ -34,3 +34,4 @@
    <p><%= highlight(album.description, params[:search]) %></p>
 </div>
 <% end %>
+</center>
